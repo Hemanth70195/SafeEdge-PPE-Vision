@@ -1,0 +1,20 @@
+# SafeEdge PPE Vision - Dependencies
+# Core deep learning & YOLO object detection
+ultralytics>=8.1.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Computer Vision & numerical processing
+opencv-python-headless>=4.8.0
+numpy>=1.24.0
+
+# HTTP utilities for model acquisition
+requests>=2.28.0
+
+# Testing framework
+pytest>=7.4.0
+
+# Phase 2 Web Application & Data Analytics
+streamlit>=1.30.0
+pandas>=2.0.0
+imageio-ffmpeg>=0.5.0

@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Model weights (Large files - do not commit weights to git)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.bin
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.engine
+models/*.bin
+
+# Output files (preserve directory via .gitkeep)
+output/*
+!output/.gitkeep
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+.DS_Store

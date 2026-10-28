@@ -1,0 +1,93 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "module": "environmental_hazard_simulator",
+    "regulatory_disclaimer": "DISCLAIMER: SIMULATED DATA — NOT LIVE SENSOR READINGS. The simulation threshold values, parameter ranges, and hazard status boundaries configured herein represent demonstration defaults for simulation, testing, and educational purposes only. They do NOT constitute universal occupational exposure limits or statutory safety standards (such as OSHA, NIOSH, ACGIH, or ISO standards). In production deployments, thresholds must be calibrated and configured in accordance with applicable regional occupational health and safety regulations, specific site hazard assessments, and professional industrial hygiene guidance."
+  },
+  "simulation": {
+    "default_mode": "manual",
+    "update_interval_seconds": 2.0,
+    "random_walk_enabled": true
+  },
+  "parameters": {
+    "temperature": {
+      "display_name": "Temperature",
+      "unit": "°C",
+      "description": "Ambient site dry-bulb temperature.",
+      "min_value": -10.0,
+      "max_value": 55.0,
+      "step": 0.5,
+      "default_value": 24.0,
+      "simulation_drift_max": 1.5,
+      "thresholds": {
+        "type": "range",
+        "safe_min": 15.0,
+        "safe_max": 30.0,
+        "warning_min": 5.0,
+        "warning_max": 38.0
+      }
+    },
+    "humidity": {
+      "display_name": "Humidity",
+      "unit": "%",
+      "description": "Relative atmospheric moisture percentage.",
+      "min_value": 0.0,
+      "max_value": 100.0,
+      "step": 1.0,
+      "default_value": 45.0,
+      "simulation_drift_max": 3.0,
+      "thresholds": {
+        "type": "range",
+        "safe_min": 30.0,
+        "safe_max": 60.0,
+        "warning_min": 20.0,
+        "warning_max": 80.0
+      }
+    },
+    "dust": {
+      "display_name": "Dust Concentration",
+      "unit": "µg/m³",
+      "description": "Respirable particulate matter (PM10 / silica dust concentration).",
+      "min_value": 0.0,
+      "max_value": 500.0,
+      "step": 1.0,
+      "default_value": 28.0,
+      "simulation_drift_max": 10.0,
+      "thresholds": {
+        "type": "upper",
+        "warning_threshold": 50.0,
+        "danger_threshold": 150.0
+      }
+    },
+    "noise": {
+      "display_name": "Noise Level",
+      "unit": "dB",
+      "description": "Acoustic sound pressure level from equipment and construction activities.",
+      "min_value": 30.0,
+      "max_value": 130.0,
+      "step": 0.5,
+      "default_value": 65.0,
+      "simulation_drift_max": 3.5,
+      "thresholds": {
+        "type": "upper",
+        "warning_threshold": 70.0,
+        "danger_threshold": 85.0
+      }
+    },
+    "gas": {
+      "display_name": "Gas Concentration",
+      "unit": "ppm",
+      "description": "Hazardous airborne gas concentration index (e.g., CO, H2S, flammable vapors).",
+      "min_value": 0.0,
+      "max_value": 200.0,
+      "step": 0.5,
+      "default_value": 8.0,
+      "simulation_drift_max": 4.0,
+      "thresholds": {
+        "type": "upper",
+        "warning_threshold": 25.0,
+        "danger_threshold": 50.0
+      }
+    }
+  }
+}

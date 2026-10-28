@@ -1,0 +1,59 @@
+{
+  "model": {
+    "model_path": "models/best.pt",
+    "download_url": "https://huggingface.co/Hansung-Cho/yolov8-ppe-detection/resolve/main/best.pt",
+    "expected_file_size_bytes": 6250090,
+    "confidence_threshold": 0.35,
+    "device": "auto",
+    "required_ppe_types": ["helmet", "vest"]
+  },
+  "class_mappings": {
+    "person": ["Person", "person", "worker"],
+    "helmet": ["Hardhat", "helmet", "safety_helmet", "hard_hat"],
+    "vest": ["Safety Vest", "vest", "safety_vest", "high_visibility_vest"],
+    "no_helmet": ["NO-Hardhat", "no_helmet", "no-hardhat"],
+    "no_vest": ["NO-Safety Vest", "no_vest", "no-safety-vest", "no-safety vest"],
+    "mask": ["Mask", "mask"],
+    "no_mask": ["NO-Mask", "no_mask"],
+    "safety_cone": ["Safety Cone", "safety_cone"],
+    "machinery": ["machinery", "excavator"],
+    "vehicle": ["vehicle", "truck"]
+  },
+  "assessment": {
+    "min_person_confidence": 0.35,
+    "min_ppe_confidence": 0.25,
+    "helmet_head_region_ratio": 0.45,
+    "vest_torso_region_min_ratio": 0.10,
+    "vest_torso_region_max_ratio": 0.90,
+    "min_horizontal_overlap_ratio": 0.10,
+    "worker_overlap_ambiguity_iou": 0.45,
+    "min_worker_height_px": 40,
+    "min_worker_width_px": 20
+  },
+  "visualization": {
+    "font_scale": 0.55,
+    "line_thickness": 2,
+    "show_legend": true,
+    "colors": {
+      "compliant": [36, 179, 74],
+      "violation": [30, 30, 220],
+      "review_required": [0, 140, 255],
+      "person_box": [220, 220, 220],
+      "helmet_box": [0, 215, 255],
+      "vest_box": [50, 205, 50],
+      "no_helmet_box": [0, 0, 255],
+      "no_vest_box": [0, 0, 255]
+    }
+  },
+  "video": {
+    "supported_formats": [".mp4", ".avi", ".mov"],
+    "max_upload_size_mb": 500,
+    "default_stride": 1,
+    "min_stride": 1,
+    "max_stride": 10
+  },
+  "output": {
+    "default_output_dir": "output",
+    "save_annotations": true
+  }
+}
